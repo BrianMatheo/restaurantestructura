@@ -62,6 +62,11 @@ public class Ventana extends javax.swing.JFrame {
 
         analizar.setText("Analizar Información");
         analizar.setEnabled(false);
+        analizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                analizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,7 +110,6 @@ public class Ventana extends javax.swing.JFrame {
         objmenu.crearMenu(Integer.parseInt(JOptionPane.showInputDialog("diga el numero de platos")));
         consultar.setEnabled(true);
         ingresar.setEnabled(true);
-        analizar.setEnabled(true);
     }//GEN-LAST:event_crearActionPerformed
 
     private void consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarActionPerformed
@@ -114,7 +118,12 @@ public class Ventana extends javax.swing.JFrame {
 
     private void ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarActionPerformed
         objmenu.ingresarDatos();
+        analizar.setEnabled(true);
     }//GEN-LAST:event_ingresarActionPerformed
+
+    private void analizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analizarActionPerformed
+        objmenu.analizarInformacion();
+    }//GEN-LAST:event_analizarActionPerformed
 
     /**
      * @param args the command line arguments
