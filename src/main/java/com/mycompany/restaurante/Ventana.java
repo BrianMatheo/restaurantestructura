@@ -106,7 +106,6 @@ public class Ventana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearActionPerformed
-
         objmenu.crearMenu(Integer.parseInt(JOptionPane.showInputDialog("diga el numero de platos")));
         consultar.setEnabled(true);
         ingresar.setEnabled(true);
