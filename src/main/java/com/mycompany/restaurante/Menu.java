@@ -2,18 +2,22 @@ package com.mycompany.restaurante;
 
 import javax.swing.JOptionPane;
 
-public class Menu {
+public class Menu{
     String platos[];
     int datos[][];
     String dias[] = new String[]{"lunes", "martes", "miercoles", "jueves", "viernes", "sabado"};
     double sumatotal = 0;
     double promtotal = 0;
+    Platos arrayObjetos[];
     
     public void crearMenu(int cantidad){
-        platos = new String[cantidad];
+    Platos arrayObjetos[] = new Platos[cantidad];
+    Platos obj = new Platos();
+    
         int i=0;
         while(i<cantidad){
-            platos[i] = JOptionPane.showInputDialog("Diga el nombre del plato " + (i+1));
+            obj.setNombre(JOptionPane.showInputDialog("ingresa el nombre"));
+            obj.setPrecio(Integer.parseInt(JOptionPane.showInputDialog("ingrese el precio")));
             i++;
         }
     }
@@ -36,7 +40,7 @@ public class Menu {
     public void analizarInformacion(){
         for(int f=0;f<platos.length;f++){
             int sumador = 0;
-            int promedio = 0;
+            double promedio = 0;
             int diamenos = 0;
             String diamen = "";
             int diasmas = 0;
@@ -54,7 +58,6 @@ public class Menu {
                     diasmas = sumador;
                     diamas = dias[c];
                 }
-                
                                 
                 if(diasmas==datos[c][f] && c!=0){
                 diamas += " y " + dias[c];
@@ -79,6 +82,6 @@ public class Menu {
         }
         double desviacion = sumatotal - (promtotal * platos.length);
         double coefivari = desviacion / promtotal;
-        JOptionPane.showMessageDialog(null,"La cantidad de platos vendidos en la semana es de: " + sumatotal + "\nel promedio de ventas al dia de todos los platos es de: " + promtotal + "\nsu desviacion es de: " + desviacion + "\nsu coeficiente de variacion es de: " + coefivari);
+        JOptionPane.showMessageDialog(null,"La cantidad de platos vendidos en la semana es de: " + sumatotal + "\nel promedio de ventas al dia de todos los platos es de: " + promtotal + "\nsu desviacion es de: " + desviacion + "\nsu coeficiente de variacion es de: " + coefivari + "%");
     }
 }
