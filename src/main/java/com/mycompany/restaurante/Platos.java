@@ -5,9 +5,13 @@ public class Platos {
     private int precio;
     private String nombre;
 
-    public Platos(int precio, String nombre) {
+    public Platos(String nombre, int precio) {
         this.precio = precio;
         this.nombre = nombre;
+    }
+    
+    public Platos(){
+        
     }
 
     /**
