@@ -4,10 +4,20 @@ public class Platos {
 
     private int precio;
     private String nombre;
+    private int costo;
 
-    public Platos(String nombre, int precio) {
+    public Platos(String nombre, int precio, int costo) {
         this.precio = precio;
         this.nombre = nombre;
+        this.costo = costo;
+    }
+
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
     }
     
     public Platos(){
